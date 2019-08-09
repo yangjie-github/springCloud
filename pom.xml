@@ -86,6 +86,7 @@
     <build>
         <!--如果设置就会按照你自己设定的名字作为包名， 如果没有设置，打包后的包名是artifactId与version拼接的结果-->
         <!--<finalName>parent</finalName>-->
+        <!--允许访问src/main/resources下的所有资源-->
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -110,6 +111,7 @@
     <modules>
         <module>yangjiecloud-api</module>
         <module>yangjiecloud-user</module>
+        <module>yangjiecloud-eureka</module>
     </modules>
     <!--
     springcloud版本名称	支持的springboot版本
