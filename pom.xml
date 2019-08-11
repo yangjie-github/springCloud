@@ -110,8 +110,9 @@
     <!--在创建好子工程后，在父工程里面要加入module-->
     <modules>
         <module>yangjiecloud-api</module>
-        <module>yangjiecloud-user</module>
-        <module>yangjiecloud-eureka</module>
+        <module>yangjiecloud-eureka-8801</module>
+        <module>yangjiecloud-user-8101</module>
+        <module>yangjiecloud-consumer</module>
     </modules>
     <!--
     springcloud版本名称	支持的springboot版本
