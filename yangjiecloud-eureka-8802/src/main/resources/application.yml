@@ -1,0 +1,14 @@
+server:
+  port: 8802
+
+eureka:
+  server:
+    enable-self-preservation: true
+  instance:
+    hostname: eureka8802.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/,http://eureka8801.com:8801/eureka/
+
