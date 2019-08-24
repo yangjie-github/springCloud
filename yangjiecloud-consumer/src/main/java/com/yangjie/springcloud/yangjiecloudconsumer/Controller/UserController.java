@@ -1,6 +1,5 @@
 package com.yangjie.springcloud.yangjiecloudconsumer.Controller;
 
-import com.yangjie.springcloud.yangjiecloudapi.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
