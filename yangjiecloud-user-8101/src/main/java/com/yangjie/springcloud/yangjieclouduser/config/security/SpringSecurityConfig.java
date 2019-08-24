@@ -29,6 +29,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     private MyAuthenticationProvider provider;//自定义验证
 	@Autowired
 	private MyAuthenticationFailureHandler myAuthenticationFailureHandler;
+	@Autowired
+	private ValidateCodeFilter validateCodeFilter;
 	
 	@Override
 	public void configure(WebSecurity web) throws Exception {
@@ -38,9 +40,11 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		//之前添加验证码校验
+		http.addFilterBefore(validateCodeFilter, UsernamePasswordAuthenticationFilter.class);
 		http
 			.authorizeRequests()//访问首页不需要权限，其他页面需要权限
-				.antMatchers("/").permitAll().anyRequest().authenticated().and()
+				.antMatchers("/", "/code/image").permitAll().anyRequest().authenticated().and()
 			.logout()//退出不需要权限
 				.permitAll().and()
 			.formLogin()//支持表单登陆
