@@ -14,13 +14,18 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping("consumer/user")
 public class UserController {
 
+    //整合ribbon后直接可以通过微服务名来访问
+    private static final String REST_URL_PREFIX = "http://MICROSERVICECLOUD-USER";
+
     @Autowired
     private RestTemplate restTemplate;
 
     @GetMapping("get")
     private String getUser() {
-        String url = "http://localhost:8101/user/get/123456";
+        String url = REST_URL_PREFIX + "/";
 
         return restTemplate.getForObject(url, String.class);
     }
+
+
 }

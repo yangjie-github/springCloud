@@ -113,6 +113,7 @@
         <module>yangjiecloud-eureka-8801</module>
         <module>yangjiecloud-eureka-8802</module>
         <module>yangjiecloud-user-8101</module>
+        <module>yangjiecloud-user-8102</module>
         <module>yangjiecloud-consumer</module>
     </modules>
     <!--
