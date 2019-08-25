@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class SecurityController {
 	@RequestMapping("/")
 	public String home() {
-		return "这个页面每个人都可以访问user服务1";
+		return "这个页面每个人都可以访问user服务2";
 	}
 	
 	@RequestMapping("/hello")
