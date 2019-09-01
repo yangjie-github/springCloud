@@ -114,7 +114,8 @@
         <module>yangjiecloud-eureka-8802</module>
         <module>yangjiecloud-user-8101</module>
         <module>yangjiecloud-user-8102</module>
-        <module>yangjiecloud-consumer</module>
+        <module>yangjiecloud-consumer-ribbon</module>
+        <module>yangjiecloud-consumer-feign</module>
     </modules>
     <!--
     springcloud版本名称	支持的springboot版本

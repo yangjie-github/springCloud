@@ -9,9 +9,9 @@
         <!--relativePath执行parent的pom文件-->
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>yangjiecloud-consumer</artifactId>
+    <artifactId>yangjiecloud-consumer-ribbon</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>yangjiecloud-consumer</name>
+    <name>yangjiecloud-consumer-ribbon</name>
 
     <properties>
         <java.version>1.8</java.version>
