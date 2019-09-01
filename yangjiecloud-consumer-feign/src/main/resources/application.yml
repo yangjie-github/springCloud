@@ -1,0 +1,9 @@
+server:
+  port: 81
+
+eureka:
+  client:
+    #不将本服务注册进eureka
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://eureka8801.com:8801/eureka/,http://eureka8802.com:8802/eureka/
