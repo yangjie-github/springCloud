@@ -116,6 +116,7 @@
         <module>yangjiecloud-user-8102</module>
         <module>yangjiecloud-consumer-ribbon</module>
         <module>yangjiecloud-consumer-feign</module>
+        <module>yangjiecloud-hystrix-8201</module>
     </modules>
     <!--
     springcloud版本名称	支持的springboot版本
