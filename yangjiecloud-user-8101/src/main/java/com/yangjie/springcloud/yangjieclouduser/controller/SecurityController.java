@@ -1,6 +1,10 @@
 package com.yangjie.springcloud.yangjieclouduser.controller;
 
+import com.yangjie.springcloud.yangjiecloudapi.dao.UserDao;
+import com.yangjie.springcloud.yangjiecloudapi.entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -13,6 +17,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @ResponseBody
 public class SecurityController {
+
+	@Autowired
+	private UserDao userDao;
+
 	@RequestMapping("/")
 	public String home() {
 		return "这个页面每个人都可以访问user服务1";
@@ -26,5 +34,11 @@ public class SecurityController {
 	@RequestMapping("/admin")
 	public String admin() {
 		return "这个页面只有admin角色才能访问";
+	}
+
+	@RequestMapping("/getUser/{name}")
+	public User getUser(@PathVariable String name) {
+		User userByUsername = userDao.findUserByUsername(name);
+		return userByUsername;
 	}
 }

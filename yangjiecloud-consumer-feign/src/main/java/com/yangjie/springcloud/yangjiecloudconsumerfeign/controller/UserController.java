@@ -2,7 +2,8 @@ package com.yangjie.springcloud.yangjiecloudconsumerfeign.controller;
 
 import com.yangjie.springcloud.yangjiecloudapi.service.UserClientService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -15,9 +16,15 @@ public class UserController {
     @Autowired
     private UserClientService userClientService;
 
-    @GetMapping("get")
-    private String getUser() {
+    @RequestMapping("getUser/{name}")
+    private String getUserByName(@PathVariable String name) {
 
-        return userClientService.getUser();
+        return userClientService.getUserByName(name);
+    }
+
+    @RequestMapping("user")
+    private String user() {
+
+        return "user";
     }
 }
