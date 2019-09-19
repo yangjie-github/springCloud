@@ -2,6 +2,8 @@ package com.yangjie.springcloud.yangjiecloudapi.service;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * @author yangjie
@@ -21,10 +23,14 @@ import org.springframework.web.bind.annotation.GetMapping;
  *   不需要自己构建http请求。不过要注意的是抽象方法的注解、方法签名要和提供服务的方法完全一致。
  */
 //MICROSERVICECLOUD-USER 微服务名称，表示对哪一个微服务进行feign编程
-@FeignClient(value = "MICROSERVICECLOUD-USER")
+//fallbackFactory 服务熔断处理类
+@FeignClient(value = "MICROSERVICECLOUD-USER", fallbackFactory = UserClientServiceFallBackFactory.class)
 public interface UserClientService {
 
     //@GetMapping("/")这里的地址实际是服务提供者的controller地址
     @GetMapping("/")
     public String getUser();
+
+    @RequestMapping("/getUser/{name}")
+    public String getUserByName(@PathVariable("name") String name);
 }

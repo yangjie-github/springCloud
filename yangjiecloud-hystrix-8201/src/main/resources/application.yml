@@ -1,0 +1,26 @@
+server:
+  port: 8201
+
+spring:
+  application:
+    #特别重要！！对外暴露的微服务名字， 在eureka页面上显示的微服务的application的名字
+    name: microservicecloud-hystrix
+
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url:
+      #单机版
+      #defaultZone: http://:8801/eureka/
+      #集群版
+      defaultZone: http://eureka8801.com:8801/eureka/,http://eureka8802.com:8802/eureka/
+  instance:
+    instance-id: yangjiecloud-user01-hystrix #在eureka页面上显示的微服务的status的名字
+    prefer-ip-address: true     #访问路径可以显示IP地址，再euruka页面显示服务的ip地址
+
+info: #当在eureka里面点击服务名字时，返回json而不是404
+  app.name: yangjie-microservicecloud
+  company.name: www.yangjie.com
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
+
+

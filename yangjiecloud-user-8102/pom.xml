@@ -12,7 +12,6 @@
     <artifactId>yangjiecloud-user-8102</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>yangjiecloud-user</name>
-    <description>Demo project for Spring Boot</description>
 
     <dependencies>
         <!-- 引入自己定义的api通用包，可以使用Dept部门Entity -->
@@ -22,7 +21,7 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
-        <!-- actuator监控信息完善,可以在eureka里面点击status显示info信息 -->
+        <!-- actuator监控信息完善,可以在eureka里面点击status显示info信息, 也可以在hystrixDashboard中被监控 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
