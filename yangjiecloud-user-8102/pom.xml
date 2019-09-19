@@ -21,7 +21,7 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
-        <!-- actuator监控信息完善,可以在eureka里面点击status显示info信息 -->
+        <!-- actuator监控信息完善,可以在eureka里面点击status显示info信息, 也可以在hystrixDashboard中被监控 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>

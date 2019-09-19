@@ -1,0 +1,35 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: microservicecloud-zuul-9527
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka8801.com:8801/eureka/,http://eureka8802.com:8802/eureka/
+  instance:
+    instance-id: gateway-9527.com
+    prefer-ip-address: true
+#之前访问地址：http://localhost:8101/getUser/admin
+#之后访问地址：http://gateway-9527.com:9527/microservicecloud-user/getUser/admin
+   #gateway-9527.com为网关的instance-id, microservicecloud-user为注册进eureka的微服务的名字
+   #只要注册进eureka的微服务，zuul都可以找到
+
+#eureka的微服务，zuul找到的是其默认的微服务名字，下面可以配置其别名
+zuul:
+  routes:
+    h.serviceId: microservicecloud-user #服务的真实名字
+    h.path: /user/** #代理后的名字
+    #注意上面配置好之后， 真实名字和代理后的名字都可以访问
+  #若想真实失效，则添加下面配置
+  #ignored-services: microservicecloud-user  #忽略方式一， 指定单个
+  ignored-services: "*"  #忽略方式二， 忽略所有
+  prefix: /yangjie #添加同意的访问前缀
+
+
+info:
+  app.name: yangjiecloud
+  company.name: yangjie
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
