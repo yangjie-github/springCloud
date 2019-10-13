@@ -1,0 +1,11 @@
+#系统级的配置文件， 优先级高于application.yml
+#负责从外部资源加载配置属性并解析配置
+spring:
+  cloud:
+    config:
+      #需要从github上读取的资源名称，注意没有.yml后缀， 名字和github上的配置文件名称一致
+      name: microsevicecloud-config-client
+      profile: test
+      label: master
+      ##本微服务启动后先去找服务端，通过服务端获取github上的配置
+      uri: http://config-6666.com:8800

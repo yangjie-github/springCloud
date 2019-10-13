@@ -1,0 +1,23 @@
+server:
+  port: 8800
+
+spring:
+  application:
+    name: yangjie-springcloud-config
+  cloud:
+    config:
+      server:
+        git:
+          #注意这类配置为https可以访问成功
+          #uri: git@github.com:yangjie-github/yangjie-springcloud-config.git
+          uri: https://github.com/yangjie-github/yangjie-springcloud-config.git
+          search-paths: application
+      label: master
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka8801.com:8801/eureka/,http://eureka8802.com:8802/eureka/
+  instance:
+    instance-id: config-6666.com
+    prefer-ip-address: true
