@@ -118,6 +118,7 @@
         <module>yangjiecloud-consumer-feign</module>
         <module>yangjiecloud-hystrix-8201</module>
         <module>yangjiecloud-hystrix-dashboard</module>
+        <module>yangjiecloud-zuul-gateway-9527</module>
     </modules>
     <!--
     springcloud版本名称	支持的springboot版本
